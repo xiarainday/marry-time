@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>下雨天倾情制作</title>
+<link type="text/css" rel="stylesheet" href="renxi/default.css">
+<script type="text/javascript" src="renxi/jquery.min.js"></script>
+<script type="text/javascript" src="renxi/jscex.min.js"></script>
+<script type="text/javascript" src="renxi/jscex-parser.js"></script>
+<script type="text/javascript" src="renxi/jscex-jit.js"></script>
+<script type="text/javascript" src="renxi/jscex-builderbase.min.js"></script>
+<script type="text/javascript" src="renxi/jscex-async.min.js"></script>
+<script type="text/javascript" src="renxi/jscex-async-powerpack.min.js"></script>
+<script type="text/javascript" src="renxi/functions.js" charset="utf-8"></script>
+<script type="text/javascript" src="renxi/love.js" charset="utf-8"></script>
+<style type="text/css">
+<!--
+.STYLE1 {
+	color: #666666
+}
+-->
+</style>
+</head>
+<body>
+<audio autoplay="autopaly">
+  <source src="renxi.mp3" type="audio/mp3" />
+</audio>
+<div id="main">
+  <div id="error">首先你要确定浏览器给力哟(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
+  <div id="wrap" >
+    <div id="text" style="width:400px;height:450px;overflow:auto;">
+      <div id="code"><font color="#FF0000"> <span class="say">曹曦冉同学：</span><br>
+        <span class="say">	  虽然很想亲切的称呼你，但这个时候还是严肃点的好！</span><br>  
+		<span class="say">因为你宿舍断电，本来这个灯是准备亲手送你，想着你肯定问为什么要送你，然后就顺势表个白什么的：想成为你心中的那盏灯，想给你黑夜的光明，想给你一个世界，想成为你的全世界……可惜这一切可能都不会实现了。如果可以，我希望还是朋友</span><br>  
+        <span class="say">之前发了你三个一的红包，本来应该还有两个要发，按照目前的情况，也不太可能了，我想着五个一到齐的时候再稍加解释，你不感动那起码也会心中有那么一点点甜吧！一山一水一树一花一个我，一心一意一生一世一个你……有点难受。14号送花送成了这样是我万万没想到的，树你已经点开了，剩下的估计也没机会给你了</span><br>
+        <span class="say">我真的不会追女生，也从来没追过。虽然别人都叫我表哥，说我湖大表妹千千万，这些肯定是不真实的。是曾经确实有那么几段萌芽期的被追过（也可能是我自己的错觉），但是我都亲手扼杀了，所以才有了所谓的表妹。</span><br>
+        <span class="say">对于怎么追你，我可谓是小心又谨慎。我知道我不优秀，追你对我来说难度系数肯定也达到了极值，可我就是不愿没有努力就放弃，明知道最后结果，可我还是义无反顾了。行动前请教了一下高手，可高手的套路我不能理解，似乎也没有得到高手的真传，搞成了现在的样子也不知道如何收场。</span><br>
+        <span class="say">遇到你，我不后悔;被你拒绝，我也不后悔。女神本就有拒绝一切她所不喜欢的事物。可是真的好喜欢你，喜欢你的机智，喜欢聪慧的你，喜欢你的脸，喜欢你长发，喜欢你的身高，喜欢你的举手投足间的气质，喜欢你的一切。好希望能给你我的全部</span><br>        
+		<span class="say">从开始追你到现在就没有睡好过，很紧张，也很不知所措，有点语无伦次，但每一句都是心里话，请不要介意。</span><br>
+		<span class="say"> </span><br>
+        <span class="say"><span class="space"></span> -- 厚颜无耻之人书 --</span> </font>
+        
+      </div>
+    </div>
+    <div id="clock-box"> <span class="STYLE1"></span><font color="#33CC00">从12.03我们见的第一面，现在</font> <span class="STYLE1">是我们相识的……</span>
+      <div id="clock"></div>
+    </div>
+    <canvas id="canvas" width="1100" height="680"></canvas>
+  </div>
+</div>
+<script>
+    </script>
+<script>
+    (function(){
+        var canvas = $('#canvas');
+		
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;        }
+
+        var width = canvas.width();
+        var height = canvas.height();        
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]] 
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
+
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
+
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            if (seed.hover(x, y)) {
+                hold = 0; 
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
+
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
+
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
+
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
+
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
+
+            // 会有闪烁不得意这样做, (＞﹏＜)
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
+
+        var jumpAnimate = eval(Jscex.compile("async", function () {
+            var ctx = tree.ctx;
+            while (true) {
+                tree.ctx.clearRect(0, 0, width, height);
+                tree.jump();
+                foot.draw();
+                $await(Jscex.Async.sleep(25));
+            }
+        }));
+
+        var textAnimate = eval(Jscex.compile("async", function () {
+		    var together = new Date();
+		    together.setFullYear(2016,11 , 3); 			//时间年月日
+		    together.setHours(8);						//小时	
+		    together.setMinutes(51);					//分钟
+		    together.setSeconds(0);					//秒前一位
+		    together.setMilliseconds(2);				//秒第二位
+
+		    $("#code").show().typewriter();
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
+
+            textAnimate().start();
+
+            $await(jumpAnimate());
+        }));
+
+        runAsync().start();
+    })();
+    </script>
+
+
+</body>
+</html>
